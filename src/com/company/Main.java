@@ -21,16 +21,18 @@ public class Main {
     private void menu() {
         String input;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("|String| randomizer or |Int| randomizer?");
+        System.out.println("|String| randomizer, |Char| randomizer or |Int| randomizer?");
         input = scanner.nextLine();
-        while (!input.equals("String") && !input.equals("Int")) {
-            System.out.println("Wrong input.. type |String| or |Int|");
+        while (!input.equals("String") && !input.equals("Int") && !input.equals("Char")) {
+            System.out.println("Wrong input.. type |String|, |Int| or |Char|");
             input = scanner.nextLine();
         }
         if (input.equals("Int")) {
             this.generator.IntGenerator();
-        } else {
+        } else if (input.equals("String")) {
             this.generator.StringGenerator();
+        } else {
+            this.generator.CharGenerator();
         }
     }
 

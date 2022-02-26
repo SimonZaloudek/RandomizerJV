@@ -15,6 +15,8 @@ public class Generator {
         this.scanner = new Scanner(System.in);
         this.hry = new ArrayList<>();
         this.rndm = new Random();
+
+        this.input = "";
     }
 
     public void StringGenerator() {
@@ -45,7 +47,6 @@ public class Generator {
     public void IntGenerator() {
         int bottomN;
         int topN;
-        input = "";
         System.out.println("Type the smallest number");
         bottomN = scanner.nextInt();
         System.out.println("Type the biggest number");
@@ -58,7 +59,30 @@ public class Generator {
             System.out.println("\nDo you want to roll again? |y|n|");
             input = scanner.nextLine();
             while (!input.equals("y") && !input.equals("n")) {
-                System.out.println("Zadal si nespravnu hodnotu |y|n|");
+                System.out.println("Wrong input |y|n|");
+                input = scanner.nextLine();
+            }
+            if (input.equals("n")) {
+                System.out.println("Enjoy");
+            }
+        } while (!input.equals("n"));
+    }
+
+    public void CharGenerator() {
+        String abeceda = "ABCDEFGH1IJKLMNOPQRSTUVWXYZ";
+        System.out.println("Printing random letter between |A| - |Z|");
+        System.out.println("________________________________________");
+        do {
+            char pismeno = (abeceda.charAt(rndm.nextInt(26)));
+            if (pismeno == '1') {
+                System.out.println("CH");
+            } else {
+                System.out.println(pismeno);
+            }
+            System.out.println("Do you want to roll again? |y||n|");
+            input = scanner.nextLine();
+            while (!input.equals("y") && !input.equals("n")) {
+                System.out.println("Wrong input |y|n|");
                 input = scanner.nextLine();
             }
             if (input.equals("n")) {
