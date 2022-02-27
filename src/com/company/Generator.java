@@ -31,16 +31,7 @@ public class Generator {
             int cislo = rndm.nextInt(hry.size());
             System.out.println(hry.get(cislo));
             hry.clear();
-
-            System.out.println("\nDo you want to repeat the program? |y|n|");
-            input = scanner.nextLine();
-            while (!input.equals("y") && !input.equals("n")) {
-                System.out.println("Input must be |y| or |n|");
-                input = scanner.nextLine();
-            }
-            if (input.equals("n")) {
-                System.out.println("Enjoy");
-            }
+            this.rollDetection();
         } while (!input.equals("n"));
     }
 
@@ -55,16 +46,7 @@ public class Generator {
         do {
             int cislo = rndm.nextInt(topN - bottomN + 1) + bottomN;
             System.out.println("Random number is : " + cislo);
-
-            System.out.println("\nDo you want to roll again? |y|n|");
-            input = scanner.nextLine();
-            while (!input.equals("y") && !input.equals("n")) {
-                System.out.println("Wrong input |y|n|");
-                input = scanner.nextLine();
-            }
-            if (input.equals("n")) {
-                System.out.println("Enjoy");
-            }
+            this.rollDetection();
         } while (!input.equals("n"));
     }
 
@@ -79,15 +61,21 @@ public class Generator {
             } else {
                 System.out.println(pismeno);
             }
-            System.out.println("Do you want to roll again? |y||n|");
-            input = scanner.nextLine();
-            while (!input.equals("y") && !input.equals("n")) {
-                System.out.println("Wrong input |y|n|");
-                input = scanner.nextLine();
-            }
-            if (input.equals("n")) {
-                System.out.println("Enjoy");
-            }
+            this.rollDetection();
         } while (!input.equals("n"));
     }
+
+    public void rollDetection() {
+        System.out.println("\nDo you want to roll again? |y|n|");
+        input = scanner.nextLine();
+        while (!input.equals("y") && !input.equals("n")) {
+            System.out.println("Wrong input |y|n|");
+            input = scanner.nextLine();
+        }
+        if (input.equals("n")) {
+            System.out.println("Enjoy\n___________________");
+        }
+    }
 }
+
+

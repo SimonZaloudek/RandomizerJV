@@ -13,6 +13,7 @@ public class Login {
     }
 
     private void login() {
+        int counter = 0;
         System.out.println("Zadaj meno:");
         String meno = scanner.nextLine();
 
@@ -21,6 +22,10 @@ public class Login {
 
         while (!input.equals("haha")) {
             System.out.println("Nespravne heslo!!");
+            counter++;
+            if (counter > 2) {
+                System.out.println("Hint: Sound you make when you laugh..");
+            }
             input = scanner.nextLine();
         }
         System.out.println("Vitaj " + meno +  "!!");
