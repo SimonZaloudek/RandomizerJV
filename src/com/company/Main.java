@@ -23,10 +23,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         loop:
         while (true) {
-            System.out.println("|String| randomizer, |Char| randomizer or |Int| randomizer? ..|end| to stop the program");
+            System.out.println("|String| randomizer, |Char| randomizer, |Int| randomizer or |Test| randomizer? ..|end| to stop the program");
             input = scanner.nextLine();
-            while (!input.equals("String") && !input.equals("string") && !input.equals("Int") && !input.equals("int") && !input.equals("Char") && !input.equals("char") && !input.equals("end")) {
-                System.out.println("Wrong input.. type |String|, |Int| or |Char| ..|end| to stop the program)");
+            while (!input.equals("String") && !input.equals("string") && !input.equals("Int") && !input.equals("int") && !input.equals("Char") && !input.equals("test") && !input.equals("Test") && !input.equals("char") && !input.equals("end")) {
+                System.out.println("Wrong input.. type |String|, |Int|, |Char| or |Test| ..|end| to stop the program)");
                 input = scanner.nextLine();
             }
             switch (input) {
@@ -40,8 +40,12 @@ public class Main {
                 case "string":
                     this.generator.StringGenerator();
                     break;
-                default:
+                case "Char":
+                case "char":
                     this.generator.CharGenerator();
+                    break;
+                default:
+                    this.generator.TestGenerator();
                     break;
             }
         }
