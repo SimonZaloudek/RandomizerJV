@@ -2,19 +2,19 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Main {
+public class Game {
     private final Generator generator;
 
     public static void main(String[] args) {
-        new Main();
+        new Game();
     }
 
-    public Main() {
+    public Game() {
         //Inic.
         this.generator = new Generator();
         //Login method
         new Login();
-        //Telo kódu
+        //Body
         this.menu();
     }
 

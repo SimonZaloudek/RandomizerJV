@@ -8,14 +8,13 @@ public class Generator {
 
     private final Random rndm;
     private final Scanner scanner;
-    private final ArrayList<String> hry;
+    private final ArrayList<String> list;
     private String input;
 
     public Generator() {
         this.scanner = new Scanner(System.in);
-        this.hry = new ArrayList<>();
+        this.list = new ArrayList<>();
         this.rndm = new Random();
-
         this.input = "";
     }
 
@@ -24,13 +23,13 @@ public class Generator {
             System.out.println("Type anything u cant decide about, then type |decide|");
             input = scanner.nextLine();
             while (!input.equals("decide")) {
-                hry.add(input);
+                list.add(input);
                 input = scanner.nextLine();
             }
             System.out.println("Go on:");
-            int cislo = rndm.nextInt(hry.size());
-            System.out.println(hry.get(cislo) + "\n");
-            hry.clear();
+            int cislo = rndm.nextInt(list.size());
+            System.out.println(list.get(cislo) + "\n");
+            list.clear();
             this.rollDetection();
         } while (!input.equals("n"));
     }
@@ -51,11 +50,11 @@ public class Generator {
     }
 
     public void CharGenerator() {
-        String abeceda = "ABCDEFGH1IJKLMNOPQRSTUVWXYZ";
+        String alphabet = "ABCDEFGH1IJKLMNOPQRSTUVWXYZ";
         System.out.println("Printing random letter between |A| - |Z|");
         System.out.println("________________________________________");
         do {
-            char pismeno = (abeceda.charAt(rndm.nextInt(26)));
+            char pismeno = (alphabet.charAt(rndm.nextInt(26)));
             if (pismeno == '1') {
                 System.out.println("CH\n");
             } else {
@@ -66,8 +65,9 @@ public class Generator {
     }
 
     public void TestGenerator() {
-        String abeceda = "ABCDEFGH1IJKLMNOPQRSTUVWXYZ";
-        int pocet = 0;
+        int pocet;
+        String alphabet = "ABCDEFGH1IJKLMNOPQRSTUVWXYZ";
+
         System.out.println("Type the number of test options |2| - |99|");
         System.out.println("________________________________________");
         pocet = scanner.nextInt();
@@ -78,7 +78,7 @@ public class Generator {
             scanner.nextLine();
         }
         do {
-            char pismeno = (abeceda.charAt(rndm.nextInt(pocet)));
+            char pismeno = (alphabet.charAt(rndm.nextInt(pocet)));
             System.out.println(pismeno + "\n");
             this.rollDetection();
         } while (!input.equals("n"));

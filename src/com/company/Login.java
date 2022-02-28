@@ -14,21 +14,21 @@ public class Login {
 
     private void login() {
         int counter = 0;
-        System.out.println("Zadaj meno:");
-        String meno = scanner.nextLine();
+        System.out.println("Enter your name:");
+        String name = scanner.nextLine();
 
-        System.out.println("Zadaj heslo:");
+        System.out.println("Enter your password:");
         input = scanner.nextLine();
 
         while (!input.equals("haha")) {
-            System.out.println("Nespravne heslo!!");
+            System.out.println("Wrong password!!");
             counter++;
             if (counter > 2) {
                 System.out.println("Hint: Sound you make when you laugh..");
             }
             input = scanner.nextLine();
         }
-        System.out.println("Vitaj " + meno +  "!!");
+        System.out.println("Welcome " + name +  "!!");
         System.out.println("_________________________________________");
     }
 }
