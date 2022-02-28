@@ -33,9 +33,11 @@ public class Main {
                 case "end":
                     break loop;
                 case "Int":
+                case "int":
                     this.generator.IntGenerator();
                     break;
                 case "String":
+                case "string":
                     this.generator.StringGenerator();
                     break;
                 default:
