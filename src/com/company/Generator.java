@@ -58,7 +58,7 @@ public class Generator {
             if (pismeno == '1') {
                 System.out.println("CH\n");
             } else {
-                System.out.println(pismeno + "\n");
+                System.out.println("\n" + pismeno + "\n");
             }
             this.rollDetection();
         } while (!input.equals("n"));
@@ -66,7 +66,7 @@ public class Generator {
 
     public void TestGenerator() {
         int pocet;
-        String alphabet = "ABCDEFGH1IJKLMNOPQRSTUVWXYZ";
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         System.out.println("Type the number of test options |2| - |99|");
         System.out.println("________________________________________");
@@ -79,7 +79,7 @@ public class Generator {
         }
         do {
             char pismeno = (alphabet.charAt(rndm.nextInt(pocet)));
-            System.out.println(pismeno + "\n");
+            System.out.println("\n" + pismeno + "\n");
             this.rollDetection();
         } while (!input.equals("n"));
     }
