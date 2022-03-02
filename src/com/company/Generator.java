@@ -84,6 +84,11 @@ public class Generator {
         } while (!input.equals("n"));
     }
 
+    public void DateGenerator() {
+        new DateGenerator();
+    }
+
+
     public void rollDetection() {
         System.out.println("\nDo you want to roll again? |y|n|");
         input = scanner.nextLine();
