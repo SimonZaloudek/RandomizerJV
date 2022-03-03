@@ -22,13 +22,7 @@ public class Generator {
         do {
             System.out.println("Type anything u cant decide about, then type |decide|");
             input = scanner.nextLine();
-            while (!input.equals("decide")) {
-                list.add(input);
-                input = scanner.nextLine();
-            }
-            System.out.println("Go on:");
-            int cislo = rndm.nextInt(list.size());
-            System.out.println(list.get(cislo) + "\n");
+            System.out.println("\nGo on: " + this.randomString());
             list.clear();
             this.rollDetection();
         } while (!input.equals("n"));
@@ -102,6 +96,19 @@ public class Generator {
 
     public int randomInt(int topN, int botN) {
         return rndm.nextInt(topN - botN + 1) + botN;
+    }
+
+    public String randomString() {
+        while (!input.equals("decide")) {
+            list.add(input);
+            input = scanner.nextLine();
+        }
+        int cislo = rndm.nextInt(list.size());
+        return list.get(cislo);
+    }
+
+    public String getInput() {
+        return this.input;
     }
 }
 
