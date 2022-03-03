@@ -9,6 +9,7 @@ public class DateGenerator {
     private Random rndm;
     private String input;
     private int number;
+    private int year;
 
     public DateGenerator() {
         this.rndm = new Random();
@@ -60,11 +61,15 @@ public class DateGenerator {
             int botN = scanner.nextInt();
             int topN = scanner.nextInt();
             scanner.nextLine();
-            number = rndm.nextInt(topN - botN + 1) + botN;
-            System.out.println("\n" + number);
+            while (botN < 0 && topN > 3000) {
+                System.out.println("Wrong input..");
+                botN = scanner.nextInt();
+                topN = scanner.nextInt();
+                scanner.nextLine();
+            }
+            this.year = generator.randomInt(topN, botN);
+            System.out.println("\n" + year);
             generator.rollDetection();
-        }
-        while (!input.equals("n"));
+        } while (!input.equals("n"));
     }
-
 }

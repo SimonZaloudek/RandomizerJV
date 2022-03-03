@@ -43,8 +43,7 @@ public class Generator {
         topN = scanner.nextInt();
         scanner.nextLine();
         do {
-            int cislo = rndm.nextInt(topN - bottomN + 1) + bottomN;
-            System.out.println("Random number is : " + cislo + "\n");
+            System.out.println("Random number is : " + this.randomInt(topN, bottomN) + "\n");
             this.rollDetection();
         } while (!input.equals("n"));
     }
@@ -99,6 +98,10 @@ public class Generator {
         if (input.equals("n")) {
             System.out.println("Enjoy\n___________________");
         }
+    }
+
+    public int randomInt(int topN, int botN) {
+        return rndm.nextInt(topN - botN + 1) + botN;
     }
 }
 
