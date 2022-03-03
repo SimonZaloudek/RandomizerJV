@@ -1,19 +1,16 @@
 package com.company;
-import java.util.Locale;
-import java.util.Random;
 import java.util.Scanner;
 
 public class DateGenerator {
 
-    private Generator generator;
-    private Scanner scanner;
-    private Random rndm;
+    private final Generator generator;
+    private final Scanner scanner;
     private String input;
     private int year;
     private String month;
+    private int day;
 
     public DateGenerator() {
-        this.rndm = new Random();
         this.generator = new Generator();
         this.scanner = new Scanner(System.in);
         this.input = "";
@@ -35,26 +32,25 @@ public class DateGenerator {
             input = scanner.nextLine();
         }
         switch (input) {
-            case "year":
-                this.yearGen();
-                break;
-            case "year,month":
+            case "year" -> this.yearGen();
+            case "year,month" -> {
                 this.yearGen();
                 this.monthGen();
-                System.out.println("\nConclusion: " + month.toUpperCase(Locale.ROOT) + " " + year);
-                break;
-            case "year,month,day":
-
-                break;
-            case "month,day":
-
-                break;
-            case "month":
+                System.out.println("\nConclusion: " + month + " " + year);
+            }
+            case "year,month,day" -> {
+                this.yearGen();
                 this.monthGen();
-                break;
-            default:
-
-                break;
+                this.dayGen();
+                System.out.println("\nConclusion: " + day + ". " + month + " " + year);
+            }
+            case "month,day" -> {
+                this.monthGen();
+                this.dayGen();
+                System.out.println("\nConclusion: " + day + ". " + month);
+            }
+            case "month" -> this.monthGen();
+            default -> this.dayGen();
         }
     }
 
@@ -78,11 +74,25 @@ public class DateGenerator {
     }
 
     private void monthGen() {
-        String[] months = { "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december" };
+        String[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
         do {
             System.out.println("Generating random month..");
             month = months[generator.randomInt(months.length - 1, 0)];
             System.out.println("\n" + month);
+            generator.rollDetection();
+            input = generator.getInput();
+        } while (!input.equals("n"));
+    }
+
+    private void dayGen() {
+        do {
+            System.out.println("Generating random day..");
+            if (month.equals("January") || month.equals("March") || month.equals("May") || month.equals("July") || month.equals("August") || month.equals("Oktober") || month.equals("December") || month.equals("")) {
+                day = generator.randomInt(31, 1);
+            } else {
+                day = generator.randomInt(30, 1);
+            }
+            System.out.println("\n" + day + ". ");
             generator.rollDetection();
             input = generator.getInput();
         } while (!input.equals("n"));
