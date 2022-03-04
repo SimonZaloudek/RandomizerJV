@@ -15,7 +15,6 @@ public class Generator {
         this.scanner = new Scanner(System.in);
         this.list = new ArrayList<>();
         this.rndm = new Random();
-        this.input = "";
     }
 
     public void StringGenerator() {

@@ -13,9 +13,6 @@ public class DateGenerator {
     public DateGenerator() {
         this.generator = new Generator();
         this.scanner = new Scanner(System.in);
-        this.input = "";
-        this.month = "";
-
         this.core();
     }
 
