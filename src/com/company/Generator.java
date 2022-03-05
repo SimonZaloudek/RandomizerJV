@@ -76,10 +76,19 @@ public class Generator {
         } while (!input.equals("n"));
     }
 
+    public void BoolGenerator() {
+        do {
+            list.add("True");
+            list.add("False");
+            System.out.println(list.get(rndm.nextInt(2)));
+            list.clear();
+            this.rollDetection();
+        } while (!input.equals("n"));
+    }
+
     public void DateGenerator() {
         new DateGenerator();
     }
-
 
     public void rollDetection() {
         System.out.println("\nDo you want to roll again? |y|n|");

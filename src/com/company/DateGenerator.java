@@ -5,7 +5,7 @@ public class DateGenerator {
 
     private final Generator generator;
     private final Scanner scanner;
-    private String input;
+    private String input2;
     private int year;
     private String month;
     private int day;
@@ -18,17 +18,17 @@ public class DateGenerator {
 
     public void core() {
         System.out.println("What do you want to randomize?: |year|year,month|year,month,day|month|month,day|day|");
-        input = scanner.nextLine();
-        while (!input.equals("year")
-            && !input.equals("year,month")
-            && !input.equals("year,month,day")
-            && !input.equals("month")
-            && !input.equals("month,day")
-            && !input.equals("day")) {
+        input2 = scanner.nextLine();
+        while (!input2.equals("year")
+            && !input2.equals("year,month")
+            && !input2.equals("year,month,day")
+            && !input2.equals("month")
+            && !input2.equals("month,day")
+            && !input2.equals("day")) {
             System.out.println("Wrong input.. |year|year,month|year,month,day|month|month,day|day|");
-            input = scanner.nextLine();
+            input2 = scanner.nextLine();
         }
-        switch (input) {
+        switch (input2) {
             case "year" -> this.yearGen();
             case "year,month" -> {
                 this.yearGen();
@@ -66,8 +66,8 @@ public class DateGenerator {
             this.year = generator.randomInt(topN, botN);
             System.out.println("\n" + year);
             generator.rollDetection();
-            input = generator.getInput();
-        } while (!input.equals("n"));
+            input2 = generator.getInput();
+        } while (!input2.equals("n"));
     }
 
     private void monthGen() {
@@ -77,8 +77,8 @@ public class DateGenerator {
             month = months[generator.randomInt(months.length - 1, 0)];
             System.out.println("\n" + month);
             generator.rollDetection();
-            input = generator.getInput();
-        } while (!input.equals("n"));
+            input2 = generator.getInput();
+        } while (!input2.equals("n"));
     }
 
     private void dayGen() {
@@ -91,7 +91,7 @@ public class DateGenerator {
             }
             System.out.println("\n" + day + ". ");
             generator.rollDetection();
-            input = generator.getInput();
-        } while (!input.equals("n"));
+            input2 = generator.getInput();
+        } while (!input2.equals("n"));
     }
 }
