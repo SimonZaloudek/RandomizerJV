@@ -4,14 +4,14 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Generator {
+public class Generators {
 
     private final Random rndm;
     private final Scanner scanner;
     private final ArrayList<String> list;
     private String input;
 
-    public Generator() {
+    public Generators() {
         this.scanner = new Scanner(System.in);
         this.list = new ArrayList<>();
         this.rndm = new Random();
@@ -90,7 +90,7 @@ public class Generator {
     }
 
     public void DateGenerator() {
-        new DateGenerator();
+        new DateGeneration();
     }
 
     public void rollDetection() {

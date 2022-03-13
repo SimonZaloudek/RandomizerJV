@@ -2,16 +2,16 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Game {
-    private final Generator generator;
+public class Main {
+    private final Generators generator;
 
     public static void main(String[] args) {
-        new Game();
+        new Main();
     }
 
-    public Game() {
+    public Main() {
         //Inic.
-        this.generator = new Generator();
+        this.generator = new Generators();
         //Login method
         new Login();
         //Body

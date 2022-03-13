@@ -1,17 +1,17 @@
 package com.company;
 import java.util.Scanner;
 
-public class DateGenerator {
+public class DateGeneration {
 
-    private final Generator generator;
+    private final Generators generator;
     private final Scanner scanner;
     private String input2;
     private int year;
     private String month;
     private int day;
 
-    public DateGenerator() {
-        this.generator = new Generator();
+    public DateGeneration() {
+        this.generator = new Generators();
         this.scanner = new Scanner(System.in);
         this.core();
     }
