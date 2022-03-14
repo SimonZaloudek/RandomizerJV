@@ -78,8 +78,11 @@ public class Generator {
 
     public void BoolGenerator() {
         do {
-            list.add("True");
-            list.add("False");
+            System.out.println("Enter your question: ");
+            scanner.nextLine();
+            System.out.println();
+            list.add("Yes");
+            list.add("No");
             System.out.println(list.get(rndm.nextInt(2)));
             list.clear();
             this.rollDetection();
