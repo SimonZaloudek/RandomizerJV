@@ -114,8 +114,8 @@ public class Generators {
             list.add(input);
             input = scanner.nextLine();
         }
-        int cislo = rndm.nextInt(list.size());
-        return list.get(cislo);
+        int cis = rndm.nextInt(list.size());
+        return list.get(cis);
     }
 
     public String getInput() {
